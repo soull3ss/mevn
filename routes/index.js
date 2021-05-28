@@ -11,4 +11,6 @@ router.get('/lists', shopController.getProducts);
 
 router.post('/insertProduct', shopController.insertProduct);
 
+router.post('/findProduct', shopController.findProduct);
+
 module.exports = router;

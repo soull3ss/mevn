@@ -34,4 +34,18 @@ exports.insertProduct = (req, res, next) => {
 
 };
 
+exports.findProduct = (req, res, next) => {
+
+    const keyFind = req.body;
+
+    Products.find(keyFind)
+        .then(results => {
+            res.json(results);
+        })
+        .catch(error => {
+            res.json(error);
+        });
+
+}
+
 
