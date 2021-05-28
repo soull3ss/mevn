@@ -9,6 +9,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/lists', shopController.getProducts);
 
-router.post('/insertLists',shopController.insertProduct);
+router.post('/insertProduct', shopController.insertProduct);
 
 module.exports = router;

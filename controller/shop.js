@@ -14,8 +14,23 @@ exports.getProducts = (req, res, next) => {
 
 exports.insertProduct = (req, res, next) => {
 
-    console.log(req.body);
+    const postData = req.body;
 
+    const productToSave = new Products({
+        title : postData.title,
+        description : postData.description,
+        price : postData.price,
+        author : postData.author,
+        copySell :postData.copySell,
+    });
+
+    productToSave.save()
+        .then(result => {
+            res.json(result);
+        })
+        .catch(err => {
+            res.json(err.errors);
+        });
 
 };
 

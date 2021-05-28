@@ -18,7 +18,7 @@ app.use('/', indexRouter);
 
 const uri = "mongodb+srv://soull3ss:Alfonso14@firstnode.joxma.mongodb.net/shop?retryWrites=true&w=majority";
 
-mongoose.connect(uri)
+mongoose.connect(uri,{useNewUrlParser: true, useUnifiedTopology: true})
     .then(result => {
        //console.log(result);
     })
