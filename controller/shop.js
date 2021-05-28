@@ -8,4 +8,15 @@ exports.getProducts = (req, res, next) => {
         .catch(errors => {
             console.log(errors);
         });
+    };
+
+
+
+exports.insertProduct = (req, res, next) => {
+
+    console.log(req.body);
+
+
 };
+
+
