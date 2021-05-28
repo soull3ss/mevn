@@ -3,7 +3,7 @@ const Products = require('../models/products');
 exports.getProducts = (req, res, next) => {
     Products.find()
         .then(products => {
-            console.log(products);
+            res.json(products);
         })
         .catch(errors => {
             console.log(errors);

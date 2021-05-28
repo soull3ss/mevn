@@ -16,11 +16,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
-const uri = "mongodb+srv://soull3ss:Alfonso14@firstnode.joxma.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://soull3ss:Alfonso14@firstnode.joxma.mongodb.net/shop?retryWrites=true&w=majority";
 
 mongoose.connect(uri)
     .then(result => {
-       console.log(result);
+       //console.log(result);
     })
     .catch(error => {
         console.log(error);
