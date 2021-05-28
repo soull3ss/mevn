@@ -2,9 +2,9 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 
 const indexRouter = require('./routes');
-const usersRouter = require('./routes/users');
 
 const app = express();
 
@@ -15,9 +15,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
+const uri = "mongodb+srv://soull3ss:Alfonso14@firstnode.joxma.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
+mongoose.connect(uri)
+    .then(result => {
+       console.log(result);
+    })
+    .catch(error => {
+        console.log(error);
+    })
 
 
 module.exports = app;
