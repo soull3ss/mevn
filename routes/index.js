@@ -7,6 +7,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/lists', function (req, res, next) {
+
+
+
     res.json({
         name: "Alfonso",
         surname : "Somma"
