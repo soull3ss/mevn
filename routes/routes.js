@@ -13,4 +13,6 @@ router.post('/insertProduct', shopController.insertProduct);
 
 router.post('/findProduct', shopController.findProduct);
 
+router.post('/deleteProducts',shopController.findAndDelete);
+
 module.exports = router;
