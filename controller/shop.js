@@ -5,6 +5,9 @@ exports.getProducts = (req, res, next) => {
         .then(products => {
             res.json(products);
         })
+        .then(produtcsJson => {
+            console.log(produtcsJson)
+        })
         .catch(errors => {
             console.log(errors);
         });
@@ -47,5 +50,19 @@ exports.findProduct = (req, res, next) => {
         });
 
 }
+
+exports.findAndDelete = (req, res, next) => {
+
+    const keyFind = req.body;
+
+    Products.findOneAndDelete(keyFind)
+        .then(results => {
+            res.json(results);
+        })
+        .catch(error => {
+           res.json(error);
+        });
+
+};
 
 

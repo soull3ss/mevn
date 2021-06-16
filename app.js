@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 //const logger = require('morgan');
 const mongoose = require('mongoose');
 
-const indexRouter = require('./routes');
+const indexRouter = require('./routes/routes');
 
 const app = express();
 
